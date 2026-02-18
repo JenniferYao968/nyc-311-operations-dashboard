@@ -150,7 +150,7 @@ chart = alt.Chart(pivot).mark_bar().encode(
 ).properties(height=350)
 st.altair_chart(chart, use_container_width=True)
 
-# Chart 8:Map
+# Chart 8: Map
 st.header("🗺️ Geographic Distribution of Complaints")
 st.caption("Explore complaint locations by month with interactive tooltips")
 # Convert created_date to datetime and extract month
