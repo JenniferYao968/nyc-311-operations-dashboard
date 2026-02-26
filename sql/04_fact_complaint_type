@@ -1,0 +1,16 @@
+-- ========================================
+-- FACT TABLE: Complaint Type Count
+-- Aggregated metrics for BI layer
+-- ========================================
+
+CREATE TABLE complaint_type_rankings
+WITH (
+  format = 'PARQUET',
+  external_location = 's3://jennifer-311-nyc-data/fact/complaint_type_rankings/'
+) AS
+SELECT
+  complaint_type,
+  COUNT(*) AS complaint_count
+FROM nyc_311_cleaned
+GROUP BY complaint_type
+ORDER BY complaint_count DESC;
